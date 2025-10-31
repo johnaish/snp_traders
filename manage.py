@@ -14,7 +14,7 @@ def main():
 
         if not User.objects.filter(username="admin").exists():
             User.objects.create_superuser(
-                username="JohnMaina",
+                username="admin",
                 email="jmaish819@gmail.com",
                 password="admin123"
             )
