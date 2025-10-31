@@ -4,8 +4,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-key'
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False if os.environ.get('RENDER') else True
+ALLOWED_HOSTS = [https://snp-traders.onrender.com]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
