@@ -11,6 +11,8 @@ from django.contrib.auth.models import User
 # ------------------------
 # User Authentication Views
 # ------------------------
+def index(request):
+    return render(request, 'shop/home.html')
 
 def signup_view(request):
     if request.method == 'POST':
