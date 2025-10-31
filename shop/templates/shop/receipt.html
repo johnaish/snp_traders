@@ -1,0 +1,18 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>Receipt</h2>
+<p>Order ID: {{ order.id }}</p>
+<p>Date: {{ order.created_at }}</p>
+<table>
+<tr><th>Product</th><th>Qty</th><th>Total</th></tr>
+{% for item in order.orderitem_set.all %}
+<tr>
+<td>{{ item.product.name }}</td>
+<td>{{ item.quantity }}</td>
+<td>{{ item.total_price }}</td>
+</tr>
+{% endfor %}
+</table>
+<h3>Total Paid: {{ order.total_cost }}</h3>
+<a onclick="window.print()">Print Receipt</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<div class="auth-container"><div class="auth-card">
+<h2>M-Pesa Checkout</h2>
+<p>Total: Ksh {{ total }}</p>
+<form method="POST">{% csrf_token %}
+<input type="text" name="phone" placeholder="M-Pesa Phone Number" required>
+<button type="submit">Confirm Payment</button>
+</form>
+</div></div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'shop/base.html' %}
+{% block content %}
+<h2>Your Orders</h2>
+{% for order in orders %}
+<p><a href="{% url 'receipt' order.id %}">Order #{{ order.id }}</a> - {{ order.created_at }}</p>
+{% empty %}<p>No past orders found.</p>{% endfor %}
+{% endblock %}
